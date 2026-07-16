@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- 2. التحقق التلقائي من حالة عمل المطعم ---
     checkRestaurantStatus();
-    setInterval(checkRestaurantStatus, 60000); // تحديث الحالة كل دقيقة
+    setInterval(checkRestaurantStatus, 60000); // تحديث الحالة تلقائياً كل دقيقة
 
     // --- 3. التنقل الانسيابي بين الأقسام (Smooth Scroll) ---
     const navLinks = document.querySelectorAll("nav ul li a");
@@ -41,19 +41,19 @@ document.addEventListener("DOMContentLoaded", () => {
     function goToSlide(index) {
         currentIndex = index;
         
-        // الانتقال بمقدار 50% لكل مجموعة (أفقياً باتجاه اليمين بما أن الواجهة RTL)
+        // الانتقال بمقدار 50% لكل مجموعة أفقياً (موجب نظراً لأن الاتجاه RTL)
         if (track) {
             track.style.transform = `translateX(${currentIndex * 50}%)`;
         }
 
-        // تحديث حالة النقاط
+        // تحديث حالة النقاط الإرشادية أسفل السلايدر
         dots.forEach(dot => dot.classList.remove("active"));
         if (dots[currentIndex]) {
             dots[currentIndex].classList.add("active");
         }
     }
 
-    // التنقل عند الضغط اليدوي على النقاط
+    // التنقل عند الضغط اليدوي على نقاط السلايدر
     dots.forEach(dot => {
         dot.addEventListener("click", (e) => {
             const slideIndex = parseInt(e.target.getAttribute("data-slide"));
@@ -61,17 +61,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // تشغيل التقليب التلقائي كل 6 ثوانٍ (فقط على الأجهزة الأكبر من الجوال)
+    // تشغيل التقليب التلقائي كل 6 ثوانٍ (فقط في الشاشات المتوسطة والكبيرة)
     setInterval(() => {
         if (window.innerWidth >= 768) {
-            let nextIndex = (currentIndex + 1) % 2; // التنقل بالتناوب بين المجموعتين 0 و 1
+            let nextIndex = (currentIndex + 1) % 2; // التبديل التلقائي بين المجموعتين 0 و 1
             goToSlide(nextIndex);
         }
     }, 6000);
 });
 
 /**
- * دالة تفاعلية لحساب حالة العمل وعرض شارة منسقة بجانب تفاصيل المطعم
+ * دالة ذكية لحساب أوقات عمل المطعم وإظهار حالة فورية للزبائن
  */
 function checkRestaurantStatus() {
     const aboutSection = document.getElementById("about");
@@ -84,24 +84,23 @@ function checkRestaurantStatus() {
 
     const openingTime = (12 * 60) + 30; // 12:30 ظهراً
     const midnight = 24 * 60;          // 12:00 منتصف الليل
-    const closingTime = 1 * 60;         // 1:00 بعد منتصف الليل (اليوم التالي)
+    const closingTime = 1 * 60;         // 1:00 صباحاً من اليوم التالي
 
     let isOpen = false;
 
-    // فترة ما بعد الظهر والمساء
+    // حالة العمل خلال فترتي الظهر والليل
     if (currentTimeInMinutes >= openingTime && currentTimeInMinutes < midnight) {
         isOpen = true;
     } 
-    // فترة ما بعد منتصف الليل وحتى الواحدة صباحاً
     else if (currentTimeInMinutes >= 0 && currentTimeInMinutes < closingTime) {
         isOpen = true;
     }
 
-    // إزالة الشارة السابقة للتحديث المباشر
+    // إزالة شارة الحالة القديمة قبل كتابة الجديدة
     const oldBadge = document.querySelector(".status-badge");
     if (oldBadge) oldBadge.remove();
 
-    // إنشاء شارة الحالة الجديدة
+    // بناء الشارة المحدثة وتنسيقها لتتوافق مع المظهر العام
     const statusBadge = document.createElement("span");
     statusBadge.className = "status-badge";
     
@@ -117,14 +116,14 @@ function checkRestaurantStatus() {
         statusBadge.style.border = "1px solid rgba(231, 76, 60, 0.2)";
     }
 
-    // تنسيق الشارة لتندمج مع بادجات قسم "حول المطعم"
+    // تنسيق الشارة المستقلة
     statusBadge.style.display = "inline-block";
     statusBadge.style.padding = "8px 20px";
     statusBadge.style.borderRadius = "30px";
     statusBadge.style.fontSize = "14px";
     statusBadge.style.fontWeight = "bold";
 
-    // إضافتها بجانب بادج الأسعار
+    // إدراجها داخل ترويسة قسم "حول المطعم" بجوار بادج الأسعار
     const infoBadgesContainer = aboutSection.querySelector(".info-badges");
     if (infoBadgesContainer) {
         infoBadgesContainer.appendChild(statusBadge);
