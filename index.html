@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم أسياخ بلدي - للمأكولات المشوية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- الهيدر العلوي الفاخر -->
+    <header>
+        <div class="logo-ribbon">
+            <img src="logo.png" alt="شعار أسياخ بلدي" class="main-logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">لمحة عن المطعم</a></li>
+                <li><a href="#menu">قائمة الطعام</a></li>
+                <li><a href="#reviews">المراجعات</a></li>
+                <li><a href="#location">موقعنا</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- قسم ترحيبي وتعريف بالمطعم -->
+        <section id="about">
+            <h1>مطعم أسياخ بلدي</h1>
+            <p class="tagline">أشهى المأكولات المشوية على أصولها</p>
+            <div class="info-badges">
+                <span class="price-range">💵 الأسعار: 20–100 ر.س. للشخص</span>
+            </div>
+            <p class="description">
+                نقدم لكم تجربة مميزة ومذاقاً لا ينسى من المشويات والكبسات البلدية الطازجة المحضرة بكل حب وإتقان لتناسب تطلعاتكم.
+            </p>
+        </section>
+
+        <!-- قسم قائمة الطعام (Accordion Grid) -->
+        <section id="menu" class="menu-section">
+            <div class="menu-header-main">
+                <h2 class="menu-title">قائمة الطعام</h2>
+                <span class="menu-subtitle">MENU</span>
+                <p class="menu-hint">اضغط على أي تصنيف لعرض الأصناف والأسعار</p>
+            </div>
+
+            <!-- تصنيف: المشويات -->
+            <div class="menu-accordion-item">
+                <div class="category-header">
+                    <h3 class="category-title">🔥 المشويات</h3>
+                    <span class="accordion-icon">＋</span>
+                </div>
+                <div class="category-content">
+                    <ul class="menu-list-style">
+                        <li><span class="item-name">كباب لحم + صحن مقبلات + خبز تنور</span><span class="item-price">44 ريال</span></li>
+                        <li><span class="item-name">شيش طاووق + صحن مقبلات + خبز تنور</span><span class="item-price">42 ريال</span></li>
+                        <li><span class="item-name">أوصال لحم + صحن مقبلات + خبز تنور</span><span class="item-price">49 ريال</span></li>
+                        <li><span class="item-name">ريش</span><span class="item-price">55 ريال</span></li>
+                        <li><span class="item-name">عرايس</span><span class="item-price">45 ريال</span></li>
+                        <li><span class="item-name">كباب دجاج + صحن مقبلات + خبز تنور</span><span class="item-price">40 ريال</span></li>
+                        <li><span class="item-name">مشاوي مشكل</span><span class="item-price">58 ريال</span></li>
+                        <li><span class="item-name">مشاوي دجاج مشكل</span><span class="item-price">54 ريال</span></li>
+                        <li><span class="item-name">مشاوي مشكل لحم</span><span class="item-price">62 ريال</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- تصنيف: الكبسات -->
+            <div class="menu-accordion-item">
+                <div class="category-header">
+                    <h3 class="category-title">🍚 الكبسات</h3>
+                    <span class="accordion-icon">＋</span>
+                </div>
+                <div class="category-content">
+                    <ul class="menu-list-style">
+                        <li><span class="item-name">دجاج فحم (حبة)</span><span class="item-price">40 ريال</span></li>
+                        <li><span class="item-name">دجاج فحم (نصف حبة)</span><span class="item-price">20 ريال</span></li>
+                        <li><span class="item-name">دجاج مضغوط (حبة)</span><span class="item-price">44 ريال</span></li>
+                        <li><span class="item-name">دجاج مضغوط (نصف حبة)</span><span class="item-price">22 ريال</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- تصنيف: الإيدامات -->
+            <div class="menu-accordion-item">
+                <div class="category-header">
+                    <h3 class="category-title">🍲 الإيدامات</h3>
+                    <span class="accordion-icon">＋</span>
+                </div>
+                <div class="category-content">
+                    <ul class="menu-list-style">
+                        <li><span class="item-name">دجاج 65</span><span class="item-price">35 ريال</span></li>
+                        <li><span class="item-name">دجاج منجوريان</span><span class="item-price">32 ريال</span></li>
+                        <li><span class="item-name">دجاج منداغني</span><span class="item-price">33 ريال</span></li>
+                        <li><span class="item-name">سمك ليموني</span><span class="item-price">38 ريال</span></li>
+                        <li><span class="item-name">دجاج ليموني</span><span class="item-price">35 ريال</span></li>
+                        <li><span class="item-name">دجاج تشيلي</span><span class="item-price">35 ريال</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- تصنيف: المقبلات والجانبيات -->
+            <div class="menu-accordion-item">
+                <div class="category-header">
+                    <h3 class="category-title">🥗 المقبلات والجانبيات</h3>
+                    <span class="accordion-icon">＋</span>
+                </div>
+                <div class="category-content">
+                    <ul class="menu-list-style">
+                        <li><span class="item-name">متبل</span><span class="item-price">15 ريال</span></li>
+                        <li><span class="item-name">سلطة خضراء</span><span class="item-price">12 ريال</span></li>
+                        <li><span class="item-name">حمص</span><span class="item-price">15 ريال</span></li>
+                        <li><span class="item-name">بابا غنوج</span><span class="item-price">13 ريال</span></li>
+                        <li><span class="item-name">تبولة</span><span class="item-price">14 ريال</span></li>
+                        <li><span class="item-name">مقبلات مشكلة</span><span class="item-price">25 ريال</span></li>
+                        <li><span class="item-name">سلطة كلوسلو</span><span class="item-price">15 ريال</span></li>
+                        <li><span class="item-name">خبز تنور</span><span class="item-price">1 ريال</span></li>
+                        <li><span class="item-name">زبادي خيار</span><span class="item-price">10 ريال</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- تصنيف: الحلا والمكسرات -->
+            <div class="menu-accordion-item">
+                <div class="category-header">
+                    <h3 class="category-title">🍰 الحلا والحلويات</h3>
+                    <span class="accordion-icon">＋</span>
+                </div>
+                <div class="category-content">
+                    <ul class="menu-list-style">
+                        <li><span class="item-name">اسبيشيل من بار كيك</span><span class="item-price">20 ريال</span></li>
+                        <li><span class="item-name">مكسرات وسط</span><span class="item-price">20 ريال</span></li>
+                        <li><span class="item-name">شوكي كريب</span><span class="item-price">15 ريال</span></li>
+                        <li><span class="item-name">فتوشيني كريب</span><span class="item-price">15 ريال</span></li>
+                        <li><span class="item-name">كريب</span><span class="item-price">15 ريال</span></li>
+                        <li><span class="item-name">ستيك وافل</span><span class="item-price">15 ريال</span></li>
+                        <li><span class="item-name">صحن تمر</span><span class="item-price">5 ريال</span></li>
+                        <li><span class="item-name">مكسرات صغير</span><span class="item-price">5 ريال</span></li>
+                        <li><span class="item-name">ميني بان كيك</span><span class="item-price">15_ريال</span></li>
+                        <li><span class="item-name">بان كيك</span><span class="item-price">15 ريال</span></li>
+                        <li><span class="item-name">وافل</span><span class="item-price">15 ريال</span></li>
+                        <li><span class="item-name">وافل فواكه</span><span class="item-price">20 ريال</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- تصنيف: المشروبات والقهوة والشاهي -->
+            <div class="menu-accordion-item">
+                <div class="category-header">
+                    <h3 class="category-title">☕ المشروبات والقهوة والشاهي</h3>
+                    <span class="accordion-icon">＋</span>
+                </div>
+                <div class="category-content">
+                    <ul class="menu-list-style">
+                        <li><span class="item-name">قهوة تركي (كوب)</span><span class="item-price">5 ريال</span></li>
+                        <li><span class="item-name">قهوة عربي (كوب)</span><span class="item-price">20 ريال</span></li>
+                        <li><span class="item-name">شاهي سادة (كوب / براد صغير / براد كبير)</span><span class="item-price">2 / 10 / 15 ريال</span></li>
+                        <li><span class="item-name">شاهي خط (كوب / براد صغير / براد كبير)</span><span class="item-price">2 / 10 / 15 ريال</span></li>
+                        <li><span class="item-name">شاهي عدني (كوب / براد صغير / براد كبير)</span><span class="item-price">2 / 10 / 15 ريال</span></li>
+                        <li><span class="item-name">شاهي طايفي (كوب / براد صغير / براد كبير)</span><span class="item-price">3 / 15 / 20 ريال</span></li>
+                        <li><span class="item-name">حليب شاهي (كوب / براد صغير / براد كبير)</span><span class="item-price">3 / 10 / 15 ريال</span></li>
+                        <li><span class="item-name">حليب كرك (كوب / براد صغير / براد كبير)</span><span class="item-price">3 / 15 / 20 ريال</span></li>
+                        <li><span class="item-name">يانسون (كوب)</span><span class="item-price">3 ريال</span></li>
+                        <li><span class="item-name">مشروب غازي</span><span class="item-price">3 ريال</span></li>
+                        <li><span class="item-name">ماء صغير</span><span class="item-price">1 ريال</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم المراجعات والتقييمات الفاخر (سلايدر متجاوب) -->
+        <section id="reviews">
+            <h2>المراجعات والتقييمات</h2>
+            
+            <div class="reviews-container">
+                <!-- ملخص التقييمات الإجمالي -->
+                <div class="reviews-summary">
+                    <div class="rating-huge">
+                        <span class="rating-number">3.9</span>
+                        <span class="stars">⭐⭐⭐⭐☆</span>
+                        <p class="total-reviews">بناءً على ١٩١ تعليقاً</p>
+                    </div>
+                </div>
+
+                <!-- منطقة السلايدر لعرض المراجعات -->
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                        
+                        <!-- المجموعة الأولى (3 تعليقات بجانب بعضها) -->
+                        <div class="carousel-slide">
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <span class="reviewer-name">أبو نايف</span>
+                                    <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                                </div>
+                                <p class="review-text">المشاوي عندهم طازة ولذيذة جداً، كباب اللحم خيالي وخبز التنور حار وممتاز. يستحق الزيارة تكراراً.</p>
+                            </div>
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <span class="reviewer-name">سارة القحطاني</span>
+                                    <span class="review-stars">⭐⭐⭐⭐☆</span>
+                                </div>
+                                <p class="review-text">الأكل ممتاز ولذيذ جداً، جربنا دجاج الفحم رائع والإيدامات مضبوطة والمكان نظيف والخدمة سريعة.</p>
+                            </div>
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <span class="reviewer-name">خالد الحربي</span>
+                                    <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                                </div>
+                                <p class="review-text">من أفضل مطاعم المشويات بنجران، تتبيلة الشيش طاووق مميزة والمقبلات المشكلة حكاية ثانية.</p>
+                            </div>
+                        </div>
+
+                        <!-- المجموعة الثانية (3 تعليقات بجانب بعضها) -->
+                        <div class="carousel-slide">
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <span class="reviewer-name">فيصل ناصر</span>
+                                    <span class="review-stars">⭐⭐⭐⭐☆</span>
+                                </div>
+                                <p class="review-text">الكبسة ممتازة والرز نثري وطعم، وجربنا الحلا الكريب والوافل كان خفيف ولذيذ بعد العشاء.</p>
+                            </div>
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <span class="reviewer-name">أميرة محمد</span>
+                                    <span class="review-stars">⭐⭐⭐⭐⭐</span>
+                                </div>
+                                <p class="review-text">موقع ممتاز ونظافة عالية، الطاقم متعاون جداً والأسعار مناسبة جداً مقارنة بالجودة والكمية.</p>
+                            </div>
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <span class="reviewer-name">محمد اليامي</span>
+                                    <span class="review-stars">⭐⭐⭐⭐☆</span>
+                                </div>
+                                <p class="review-text">أوصال اللحم طرية وتذوب بالفم، وخدمة التوصيل والطلب الهاتفي عندهم سريعة ومرتبة.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- نقاط التحكم في السلايدر -->
+                <div class="carousel-controls">
+                    <button class="carousel-dot active" data-slide="0"></button>
+                    <button class="carousel-dot" data-slide="1"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الموقع الجغرافي -->
+        <section id="location">
+            <h2>أين تجدنا؟</h2>
+            <address>
+                📍 الأثايبة، نجران 66258 <br>
+                📌 رمز الموقع: H786+JP نجران
+            </address>
+        </section>
+
+        <!-- قسم اتصل بنا -->
+        <section id="contact">
+            <h2>تواصل معنا</h2>
+            <div class="contact-buttons">
+                <a href="tel:0506464964" class="phone-link">📞 اتصل الآن: 050 646 4964</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <p>&copy; 2026 مطعم أسياخ بلدي. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- ربط السكريبت التفاعلي -->
+    <script src="script.js"></script>
+</body>
+</html>
