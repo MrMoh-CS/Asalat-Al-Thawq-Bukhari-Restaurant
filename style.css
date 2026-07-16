@@ -68,7 +68,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #dfa15f; /* تدرج ذهبي فخم */
+    color: #dfa15f; 
 }
 
 nav ul li a::after {
@@ -297,7 +297,7 @@ section {
     white-space: nowrap;
 }
 
-/* --- 6. سلايدر المراجعات (Carousel) المحدث --- */
+/* --- 6. سلايدر المراجعات (Carousel) --- */
 .reviews-container {
     display: flex;
     flex-direction: column;
@@ -352,7 +352,7 @@ section {
 
 .carousel-track {
     display: flex;
-    width: 200%; /* تغطي صفحتين من التعليقات */
+    width: 200%; /* تغطي مجموعتين من التعليقات */
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -426,7 +426,49 @@ section {
     border-radius: 6px;
 }
 
-/* --- 7. بقية العناوين والأزرار --- */
+/* --- 7. قسم الموقع الجغرافي والخرائط المتكاملة --- */
+.location-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+@media (min-width: 768px) {
+    .location-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.location-details {
+    font-style: normal;
+    color: #a0a0b0;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.map-btn {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.03);
+    color: #ffffff;
+    border: 1px solid rgba(223, 161, 95, 0.3);
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.map-btn:hover {
+    background: #dfa15f;
+    color: #0d0d13;
+    border-color: #dfa15f;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(223, 161, 95, 0.3);
+}
+
+/* --- 8. بقية العناوين والأزرار --- */
 #location h2, #contact h2 {
     color: #ffffff;
     font-size: 22px;
@@ -447,13 +489,6 @@ section {
     border-radius: 2px;
 }
 
-address {
-    font-style: normal;
-    color: #a0a0b0;
-    font-size: 16px;
-    line-height: 1.9;
-}
-
 .phone-link {
     display: inline-block;
     background: linear-gradient(135deg, #dfa15f 0%, #b37d43 100%);
@@ -470,7 +505,7 @@ address {
     box-shadow: 0 15px 30px rgba(223, 161, 95, 0.4);
 }
 
-/* --- 8. تذييل الصفحة --- */
+/* --- 9. تذييل الصفحة --- */
 footer {
     text-align: center;
     padding: 40px;
@@ -481,7 +516,7 @@ footer {
     margin-top: 60px;
 }
 
-/* --- 9. التجاوب الكامل مع الهواتف --- */
+/* --- 10. التجاوب الكامل مع الهواتف الذكية --- */
 @media (max-width: 767px) {
     header {
         flex-direction: column;
@@ -501,7 +536,7 @@ footer {
         font-size: 28px;
     }
     
-    /* مراجعات متتالية عمودياً على الجوال */
+    /* جعل المراجعات تترتب عمودياً لتجربة تصفح رائعة على الموبايل */
     .carousel-slide {
         flex-direction: column;
         gap: 15px;
@@ -516,5 +551,14 @@ footer {
     }
     .carousel-controls {
         display: none;
+    }
+    
+    .location-container {
+        align-items: stretch;
+        text-align: center;
+    }
+    .map-btn {
+        width: 100%;
+        text-align: center;
     }
 }
