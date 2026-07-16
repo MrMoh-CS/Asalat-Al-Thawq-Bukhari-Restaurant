@@ -1,0 +1,520 @@
+/* --- 1. التأسيس والخطوط والأنماط الفاخرة --- */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background: radial-gradient(circle at 50% 50%, #1a1a24 0%, #0d0d13 100%);
+    color: #f1f1f5;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- 2. هيدر عصري شفاف ومستقر --- */
+header {
+    background: rgba(13, 13, 19, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-ribbon {
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    width: 85px;
+}
+
+.main-logo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    font-weight: 700;
+    font-size: 15px;
+    color: #a0a0b0;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav ul li a:hover {
+    color: #dfa15f; /* تدرج ذهبي فخم */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #dfa15f, #ff7b54);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* --- 3. حاوية المحتوى ممتدة العرض بالكامل --- */
+main {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 4%;
+    margin: 40px 0;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 45px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* --- 4. قسم الترحيب ولمحة عن المطعم --- */
+#about {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(223, 161, 95, 0.05) 0%, rgba(13, 13, 19, 0.2) 100%);
+    border: 1px solid rgba(223, 161, 95, 0.15);
+}
+
+#about h1 {
+    font-size: 36px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    color: #dfa15f;
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.info-badges {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.price-range {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.description {
+    font-size: 16px;
+    color: #a0a0b0;
+    max-width: 700px;
+    margin: 15px auto 0 auto;
+}
+
+/* --- 5. شبكة الأكورديون الذكية --- */
+.menu-section {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.menu-header-main {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.menu-title {
+    font-size: 46px;
+    font-weight: 900;
+    color: #ffffff;
+    background: linear-gradient(180deg, #ffffff 0%, #a0a0b0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.menu-subtitle {
+    font-size: 20px;
+    color: #dfa15f;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: -5px;
+}
+
+.menu-hint {
+    color: #696979;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* توزيع الأكورديون كشبكة متجاورة في الشاشات العريضة */
+@media (min-width: 768px) {
+    .menu-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 30px;
+    }
+    .menu-header-main {
+        grid-column: 1 / -1;
+    }
+}
+
+/* كروت التصنيف للأكورديون */
+.menu-accordion-item {
+    background: #14141c;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+    height: fit-content;
+}
+
+.menu-accordion-item:hover {
+    border-color: rgba(223, 161, 95, 0.3);
+    box-shadow: 0 15px 35px rgba(223, 161, 95, 0.05);
+    transform: translateY(-4px);
+}
+
+.category-header {
+    padding: 22px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: #191922;
+    user-select: none;
+}
+
+.category-title {
+    font-size: 19px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.accordion-icon {
+    font-size: 18px;
+    color: #dfa15f;
+    background: rgba(223, 161, 95, 0.1);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.category-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 25px;
+    background-color: #14141c;
+}
+
+/* فتح الأكورديون */
+.menu-accordion-item.active .category-content {
+    max-height: 1200px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+.menu-accordion-item.active .category-header {
+    background-color: #15151e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.menu-accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+}
+
+/* قائمة الأصناف النصية والراقية جداً */
+.menu-list-style li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.menu-list-style li:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    color: #e2e2e9;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.item-price {
+    color: #dfa15f;
+    font-weight: 700;
+    font-size: 16px;
+    padding-right: 15px;
+    white-space: nowrap;
+}
+
+/* --- 6. سلايدر المراجعات (Carousel) المحدث --- */
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+@media (min-width: 992px) {
+    .reviews-container {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+.reviews-summary {
+    background: #14141c;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rating-number {
+    font-size: 54px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.stars {
+    color: #ffb443;
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+.total-reviews {
+    color: #696979;
+    font-size: 14px;
+}
+
+/* هيكلية السلايدر */
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    border-radius: 16px;
+}
+
+.carousel-track {
+    display: flex;
+    width: 200%; /* تغطي صفحتين من التعليقات */
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide {
+    width: 50%;
+    display: flex;
+    gap: 20px;
+}
+
+.review-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
+}
+
+.review-card:hover {
+    border-color: rgba(223, 161, 95, 0.2);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    padding-bottom: 10px;
+}
+
+.reviewer-name {
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.review-stars {
+    font-size: 13px;
+}
+
+.review-text {
+    font-size: 14px;
+    color: #a0a0b0;
+    line-height: 1.6;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    cursor: pointer;
+}
+
+.carousel-dot.active {
+    background: #dfa15f;
+    width: 25px;
+    border-radius: 6px;
+}
+
+/* --- 7. بقية العناوين والأزرار --- */
+#location h2, #contact h2 {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+#location h2::after, #contact h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 3px;
+    background: #dfa15f;
+    border-radius: 2px;
+}
+
+address {
+    font-style: normal;
+    color: #a0a0b0;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.phone-link {
+    display: inline-block;
+    background: linear-gradient(135deg, #dfa15f 0%, #b37d43 100%);
+    color: #ffffff;
+    padding: 14px 40px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 0 10px 25px rgba(223, 161, 95, 0.25);
+}
+
+.phone-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(223, 161, 95, 0.4);
+}
+
+/* --- 8. تذييل الصفحة --- */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #0d0d13;
+    color: #525263;
+    font-size: 13px;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    margin-top: 60px;
+}
+
+/* --- 9. التجاوب الكامل مع الهواتف --- */
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 4%;
+    }
+    nav ul {
+        gap: 15px;
+    }
+    main {
+        padding: 0 3%;
+    }
+    section {
+        padding: 25px 20px;
+    }
+    #about h1 {
+        font-size: 28px;
+    }
+    
+    /* مراجعات متتالية عمودياً على الجوال */
+    .carousel-slide {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .carousel-track {
+        transform: none !important;
+        flex-direction: column;
+        width: 100%;
+    }
+    .carousel-slide {
+        width: 100%;
+    }
+    .carousel-controls {
+        display: none;
+    }
+}
